@@ -20,7 +20,7 @@ namespace Panc_Denisa_Lab10
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listView.ItemsSource = await App.Database.GetShopListsAsync();
+            listView.ItemsSource = await App.Database.GetProductsAsync();
         }
         async void OnShopListAddedClicked(object sender, EventArgs e)
         {

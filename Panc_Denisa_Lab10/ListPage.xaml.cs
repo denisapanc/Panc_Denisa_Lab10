@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Panc_Denisa_Lab10.Models;
@@ -29,6 +28,15 @@ namespace Panc_Denisa_Lab10
             var slist = (ShopList)BindingContext;
             await App.Database.DeleteShopListAsync(slist);
             await Navigation.PopAsync();
+        }
+        async void OnChooseButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ProductPage((ShopList)
+           this.BindingContext)
+            {
+                BindingContext = new Product()
+            });
+
         }
     }
 }
